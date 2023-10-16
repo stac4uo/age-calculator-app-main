@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="./js/script.js" defer></script>
+  <link rel="stylesheet" href="./src/output.css">
+
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+  <main class="bg-LightGrey h-screen flex justify-center pt-20 md:pt-40 ">
+    <section class="bg-white h-1/2 w-[90%]  rounded-br-[100px] rounded-xl  md:h-3/4 
+    md:w-3/4">
+
+      <div class="flex gap-4 p-4 mt-4 md:p-8 md:w-[80%]">
+
+        <div class="w-[27%] ">
+          <p id="dayText" class="text-SmokeyGrey text-sm font-semibold uppercase "> Day</p><input type=""
+            placeholder="DD" id="inputDay" maxlength="2"
+            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer">
+          <p id="errorMsgEmpty1" class="text-LightRed text-[0.5rem] w-full text-center hidden">This field is required
+          </p>
+        </div>
+
+        <div class="w-[27%]">
+          <p id="monthText" class="text-SmokeyGrey text-sm font-semibold uppercase">Month</p><input type="text"
+            placeholder="MM" id="inputMonth" maxlength="2" class=" border border-LightGrey px-4 py-2 w-full
+            rounded-xl outline-none focus:border-Purple  cursor-pointer">
+          <p id="errorMsgEmpty2" class="text-LightRed text-[0.5rem] w-full text-center hidden">This field is required
+          </p>
+        </div>
+
+        <div class="w-[27%] ">
+          <p id="yearsText" class="text-SmokeyGrey text-sm font-semibold uppercase">Year</p><input type="text"
+            placeholder="YYYY" id="inputYear" maxlength="4"
+            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer ">
+          <p id="errorMsgEmpty3" class="text-LightRed text-[0.5rem] w-full text-center  hidden">This
+            field is required
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bg-LightGrey w-[80%] h-[2px] my-6 relative ml-4 md:w-[70%] ">
+        <button class="rounded-full bg-Purple  w-10 h-10 flex justify-center absolute 
+          -top-[1.2rem] left-[42%] hover:bg-black   md:left-[100%] md:h-14 md:w-14 md:-top-[1.7rem]">
+          <img src="./images/icon-arrow.svg" alt="arrow down" class="w-1/2 ">
+        </button>
+      </div>
+
+      <div class=" mt-14 text-4xl md:text-7xl lg:text-8xl flex flex-col justify-center items-center w-[80%]">
+        <div class="flex gap-2">
+          <p id="years" class=" text-Purple font-extrabold">--</p>
+          <p class=" font-extrabold">years</p>
+        </div>
+        <div class=" flex gap-2">
+          <p id="months" class="  text-Purple font-extrabold">--</p>
+          <p class=" font-extrabold">months</p>
+        </div>
+        <div class=" flex gap-2">
+          <p id="days" class=" text-Purple font-extrabold">--</p>
+          <p class=" font-extrabold">days</p>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+    </section>
+  </main>
+
+
+  <div class=" attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">stac4uo</a>.
+  </div>
+</body>
+
+</html>
