@@ -12,27 +12,29 @@ const monthText = document.querySelector("#monthText");
 const dayText = document.querySelector("#dayText");
 let date = new Date();
 
+const showError = (msg, text, input, output) => {
+	msg.classList.remove("hidden");
+	text.classList.replace("text-SmokeyGrey", "text-LightRed");
+	input.classList.replace("border-LightGrey", "border-LightRed");
+	output.textContent = "--";
+};
+const hideError = (msg, text, input) => {
+	msg.classList.add("hidden");
+	text.classList.replace("text-LightRed", "text-SmokeyGrey");
+	input.classList.replace("border-LightRed", "border-LightGrey");
+};
 let newYear = () => {
 	const inputYear = document.querySelector("#inputYear");
 
 	let input = inputYear.value;
 
 	if (isNaN(input) || input === "" || input <= 0) {
-		errorMsg3.classList.remove("hidden");
-		yearsText.classList.replace("text-SmokeyGrey", "text-LightRed");
-		inputYear.classList.replace("border-LightGrey", "border-LightRed");
-		years.innerHTML = "--";
+		showError(errorMsg3, yearsText, inputYear, years);
 	} else if (input > 2024) {
-		errorMsg3.classList.remove("hidden");
-		yearsText.classList.replace("text-SmokeyGrey", "text-LightRed");
-		inputYear.classList.replace("border-LightGrey", "border-LightRed");
-		years.innerHTML = "--";
-		errorMsg3.innerHTML = "Must by in the past"
-		return;
+		showError(errorMsg3, yearsText, inputYear, years);
+		errorMsg3.textContent = " Must by in the past";
 	} else {
-		errorMsg3.classList.add("hidden");
-		yearsText.classList.replace("text-LightRed", "text-SmokeyGrey");
-		inputYear.classList.replace("border-LightRed", "border-LightGrey");
+		hideError(errorMsg3, yearsText, inputYear);
 
 		let some = date.getFullYear() - input;
 		years.innerHTML = `${some}`;
@@ -43,21 +45,13 @@ const newMonths = () => {
 	const inputMonth = document.querySelector("#inputMonth");
 	const input = inputMonth.value;
 	if (isNaN(input) || input === "" || input <= 0) {
-		errorMsg2.classList.remove("hidden");
-		monthText.classList.replace("text-SmokeyGrey", "text-LightRed");
-		inputMonth.classList.replace("border-LightGrey", "border-LightRed");
-		months.innerHTML = "--";
+		showError(errorMsg2, monthText, inputMonth, months);
 	} else if (input > 12) {
-		errorMsg2.classList.remove("hidden");
-		monthText.classList.replace("text-SmokeyGrey", "text-LightRed");
-		inputMonth.classList.replace("border-LightGrey", "border-LightRed");
-		months.innerHTML = "--";
-		errorMsg2.innerHTML = "Must be a valid month";
+		showError(errorMsg2, monthText, inputMonth, months);
+		errorMsg2.textContent = "Must be a valid month";
 	} else {
+		hideError(errorMsg2, monthText, inputMonth);
 		months.innerHTML = `${"12" - inputMonth.value}`;
-		errorMsg2.classList.add("hidden");
-		monthText.classList.replace("text-LightRed", "text-SmokeyGrey");
-		inputMonth.classList.replace("border-LightRed", "border-LightGrey");
 	}
 };
 
@@ -66,28 +60,23 @@ const newDays = () => {
 	const input = inputDay.value;
 
 	if (isNaN(input) || input === "" || input <= 0) {
+		showError(errorMsg1, dayText, inputDay, days);
 		errorMsg1.classList.remove("hidden");
 		dayText.classList.replace("text-SmokeyGrey", "text-LightRed");
 		inputDay.classList.replace("border-LightGrey", "border-LightRed");
 
 		days.innerHTML = "--";
 	} else if (input > 31) {
-		errorMsg1.classList.remove("hidden");
-		dayText.classList.replace("text-SmokeyGrey", "text-LightRed");
-		inputDay.classList.replace("border-LightGrey", "border-LightRed");
-		errorMsg1.innerHTML = "Must be a valid ";
-		days.innerHTML = "--";
+		showError(errorMsg1, dayText, inputDay, days);
+		errorMsg1.textContent = "Must be a valid ";
 	} else {
+		hideError(errorMsg1, dayText, inputDay);
 		days.innerHTML = `${"31" - inputDay.value}`;
-		errorMsg1.classList.add("hidden");
-		dayText.classList.replace("text-LightRed", "text-SmokeyGrey");
-		inputDay.classList.replace("border-LightRed", "border-LightGrey");
 	}
 };
+button.addEventListener("click", () => {
+	newDays();
+	newMonths();
+	newYear();
+});
 
-button.addEventListener("click", newYear);
-button.addEventListener("click", newMonths);
-button.addEventListener("click", newDays);
-// console.log(`${date.getFullYear()}`);
-// console.log(`${date.getMonth() + 1}`);
-// console.log(`${date.getDate()}`);
