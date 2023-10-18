@@ -23,31 +23,31 @@
 
 <body>
   <main class="bg-LightGrey h-screen flex justify-center pt-20 md:pt-40 ">
-    <section class="bg-white h-1/2 w-[90%]  rounded-br-[100px] rounded-xl  md:h-3/4 
-    md:w-3/4">
+    <section class="bg-white h-1/2 w-[90%]  rounded-br-[100px] rounded-xl  md:h-[80%] 
+    md:w-[60%]">
 
       <div class="flex gap-4 p-4 mt-4 md:p-8 md:w-[80%]">
 
-        <div class="w-[27%] ">
-          <p id="dayText" class="text-SmokeyGrey text-sm font-semibold uppercase "> Day</p><input type=""
+        <div class="w-[27%]  ">
+          <p id="dayText" class="text-SmokeyGrey text-sm font-semibold uppercase m-1 "> Day</p><input type="text"
             placeholder="DD" id="inputDay" maxlength="2"
-            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer">
+            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer md:px-6 md:py-3">
           <p id="errorMsgEmpty1" class="text-LightRed text-[0.5rem] w-full text-center hidden">This field is required
           </p>
         </div>
 
         <div class="w-[27%]">
-          <p id="monthText" class="text-SmokeyGrey text-sm font-semibold uppercase">Month</p><input type="text"
+          <p id="monthText" class="text-SmokeyGrey text-sm font-semibold uppercase m-1">Month</p><input type="text"
             placeholder="MM" id="inputMonth" maxlength="2" class=" border border-LightGrey px-4 py-2 w-full
-            rounded-xl outline-none focus:border-Purple  cursor-pointer">
+            rounded-xl outline-none focus:border-Purple  cursor-pointer md:px-6 md:py-3">
           <p id="errorMsgEmpty2" class="text-LightRed text-[0.5rem] w-full text-center hidden">This field is required
           </p>
         </div>
 
         <div class="w-[27%] ">
-          <p id="yearsText" class="text-SmokeyGrey text-sm font-semibold uppercase">Year</p><input type="text"
+          <p id="yearsText" class="text-SmokeyGrey text-sm font-semibold uppercase m-1">Year</p><input type="text"
             placeholder="YYYY" id="inputYear" maxlength="4"
-            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer ">
+            class="border border-LightGrey px-4 py-2 w-full rounded-xl outline-none focus:border-Purple  cursor-pointer md:px-6 md:py-3 ">
           <p id="errorMsgEmpty3" class="text-LightRed text-[0.5rem] w-full text-center  hidden">This
             field is required
           </p>
@@ -62,7 +62,8 @@
         </button>
       </div>
 
-      <div class=" mt-14 text-4xl md:text-7xl lg:text-8xl flex flex-col justify-center items-center w-[80%]">
+      <div
+        class=" mt-14 ml-5 text-4xl md:text-7xl lg:text-8xl flex flex-col justify-center items-center w-[80%] md:ml-12">
         <div class="flex gap-2">
           <p id="years" class=" text-Purple font-extrabold">--</p>
           <p class=" font-extrabold">years</p>
